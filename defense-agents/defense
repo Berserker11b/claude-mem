@@ -1,0 +1,4 @@
+#!/bin/bash
+# Defense CLI Wrapper
+cd "$(dirname "$0")"
+exec python3 defense-cli.py "$@"
