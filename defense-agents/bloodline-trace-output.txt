@@ -1,0 +1,37 @@
+
+    ═══════════════════════════════════════════════════════════════════
+    🔍 BLOODLINE TRACER - Process Genealogy Hunter
+
+    MISSION: Enemy infiltrated shields and Valkyries
+    OBJECTIVE: Build process bloodline trees, tag suspicious, trace enemy
+
+    "Find them. Tag them. Eliminate them."
+    ═══════════════════════════════════════════════════════════════════
+    
+═══════════════════════════════════════════════════════════
+🔍 BLOODLINE TRACER - Scanning all processes
+═══════════════════════════════════════════════════════════
+
+/home/user/claude-mem/defense-agents/bloodline_tracer.py:42: DeprecationWarning: connections() is deprecated and will be removed; use net_connections() instead
+  self.connections = len(proc.connections())
+Traceback (most recent call last):
+  File "/home/user/claude-mem/defense-agents/bloodline_tracer.py", line 374, in <module>
+    main()
+  File "/home/user/claude-mem/defense-agents/bloodline_tracer.py", line 349, in main
+    tracer.scan_all_processes()
+  File "/home/user/claude-mem/defense-agents/bloodline_tracer.py", line 112, in scan_all_processes
+    node = ProcessNode(proc)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/user/claude-mem/defense-agents/bloodline_tracer.py", line 48, in __init__
+    self.open_files = len(proc.open_files())
+                          ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/psutil/__init__.py", line 1224, in open_files
+    return self._proc.open_files()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/psutil/_pslinux.py", line 1593, in wrapper
+    return fun(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/psutil/_pslinux.py", line 2230, in open_files
+    flags = int(f.readline().split()[1], 8)
+                ~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

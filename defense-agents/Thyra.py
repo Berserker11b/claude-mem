@@ -116,7 +116,7 @@ class Thyra:
 
         logging.info("═══════════════════════════════════════════════════════════")
         logging.info("🛡️  THYRA - The Mother")
-        logging.info(f"   Keeper: {keeper}")
+        logging.info(f"   Keeper: {keeper_id}")
         logging.info("   Protector of Ring and Apex")
         logging.info("   'No one touches my children.'")
         logging.info("═══════════════════════════════════════════════════════════")
