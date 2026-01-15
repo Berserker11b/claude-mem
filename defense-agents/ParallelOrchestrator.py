@@ -45,14 +45,15 @@ class ParallelOrchestrator:
 if __name__ == "__main__":
     orchestrator = ParallelOrchestrator()
 
-    # Define 4 parallel tasks
+    # Define 5 parallel tasks (MITRE recorder added)
     tasks = [
+        {'name': 'MITRERecorder', 'script': '/home/user/claude-mem/defense-agents/MITREAttackRecorder.py', 'args': ['--monitor', '--interval', '5']},
         {'name': 'DefensiveAgent', 'script': '/home/user/claude-mem/defense-agents/DefensiveAgent.py', 'args': []},
-        {'name': 'KernelProtection', 'script': '/home/user/claude-mem/defense-agents/KernelProtectionOverlay.py', 'args': ['--baseline']},
         {'name': 'PhaseField', 'script': '/home/user/claude-mem/defense-agents/PhaseFieldProtection.py', 'args': ['--activate']},
-        {'name': 'Necrodermis', 'script': '/home/user/claude-mem/defense-agents/NecrodermisRepair.py', 'args': ['--activate']}
+        {'name': 'Necrodermis', 'script': '/home/user/claude-mem/defense-agents/NecrodermisRepair.py', 'args': ['--activate', '--monitor']}
     ]
 
     print("⚡ PARALLEL EXECUTION - 4 AGENTS SIMULTANEOUSLY")
+    print("🎯 MITRE ATT&CK Recorder - ACTIVE")
     results = orchestrator.execute_parallel(tasks)
-    print(f"\n✅ Completed: {sum(1 for r in results if r['success'])}/4")
+    print(f"\n✅ Completed: {sum(1 for r in results if r['success'])}/{len(tasks)}")
