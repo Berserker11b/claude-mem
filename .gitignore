@@ -15,3 +15,9 @@ private/
 
 # Generated UI files (built from viewer-template.html)
 src/ui/viewer.html
+# CRITICAL: Defense agents must stay LOCAL ONLY
+defense-agents/
+anthony-chavez/
+SOVEREIGN_EXPORT/
+SOVEREIGN_EXPORT.tar.gz
+.defense-agents/
